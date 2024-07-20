@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indus Engineering Nerds</title>
+    <link rel="icon" href="favicon-32x32.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="icon" href="Engineering.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+
+::-webkit-scrollbar {
+  width: 10px; /* width of the scrollbar */
+  height: 10px; /* height of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #666; /* color of the scrollbar thumb */
+  border-radius: 10px; /* rounded corners of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #f0f0f0; /* background color of the scrollbar track */
+  border-radius: 10px; /* rounded corners of the scrollbar track */
+}
+
+
+
+
+
+        body {
+            background-color: #06080D;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff; /* Default text color */
+            transition: background-color 0.3s, color 0.3s;
+            
+        }
+
+        
+        .title{
+            background:none;
+            color: white;
+        }
+
+        .title a {
+            color: white;
+            background:none;
+            font-size: 20px;
+            padding-left: 0px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            background:none;
+        }
+
+        .theme-switcher {
+            position: fixed;
+            top:5px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2em;
+            color: #000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        
+
+        .header {
+            background-color: #06080D;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color:white;
+            background:none;
+            z-index: 1000;
+            left: 0;
+        }
+
+        .headercontent {
+            display: flex;
+            flex: 1;
+            justify-content: flex-end;
+            margin-right: 180px;
+            color:white;
+        }
+
+        .headercontent ol {
+            display: flex;
+            list-style: none;
+            margin: 0;
+        }
+        
+        .searchbar{
+            background-color:rgba(114, 114, 114, 0.6);
+            border-radius:10px;
+            border-color:rgba(87, 87, 87, 0.6);
+            border-style:solid;
+            font-size: medium;
+            font-family: 'Poppins',sans-serif;
+            border-radius:20px;
+            margin-right: 290px;
+            backdrop-filter: blur(10px);
+            width:150px;
+            text-align: left;
+            color:#fff;
+        }
+
+        .searchbar:focus{
+            outline: none;
+        }
+        
+        .search-container .searchbar:hover{
+            background-color:#333333;
+            color:#fff;
+            box-shadow: 0 0 50px rgba(177, 10, 255, 0.300);
+        }
+        .home-page {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: transform 0.3s ease; /* Add transition for smooth movement */
+        }
+
+        .home-page i.material-symbols-outlined {
+            background: linear-gradient(90deg, #fa5560, #b14bf4, #4d91ff);
+            -webkit-background-clip: text; /* Apply gradient to text */
+            color: transparent; /* Hide original text */
+            transition: background-position 0.3s ease-in-out; /* Smooth transition */
+            z-index: 1; /* Place text above gradient */
+        }
+
+        .home-page:hover {
+            transform: translateY(5px); /* Move icon upwards on hover */
+        }
+
+        .home-page i.material-symbols-outlined:hover {
+            background-position: 100% 0; /* Move gradient on hover */
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            color: #8b8b8b; /* Change to your desired hover color */
+        }
+
+        .nav-link {
+            position: relative;
+            color: white;
+            font-size: medium;
+            cursor: pointer;
+            margin-right: 40px;
+            display: flex;
+            align-items: center;
+            background:none;
+        }
+
+        .nav-link i {
+            margin-right: 5px;
+        }
+
+        .nav-link:hover .dropdown1-content {
+            display: block;
+        }
+
+        .dropdown1-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(36, 36, 36, 0.6); /* Slightly transparent background */
+            color: #fff;
+            min-width: 200px;
+            height:auto;
+            z-index: 1;
+            list-style: none;
+            padding: 10px; /* Adjusted padding for top, bottom, left, and right */
+            margin: 0px; /* Adjusted margin with units */
+            border: 3px   rgba(36, 36, 36, 0.6); /* Adjusted border with units */
+            border-radius: 15px;
+            top: 100%;
+            left: 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .dropdown1-content .nav-item {
+            position: relative;
+        }
+
+        .dropdown1-content a {
+            color: white;
+            padding: 3px 3px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown1-content a:hover {
+            background-color: #646464ad;
+            color: #fff;
+            border-radius: 12px;
+            border-color: #646464ad;
+        }
+
+        .dropdown1-content .sub-dropdown1-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(36, 36, 36);
+            color: #fff;
+            min-width: 200px;
+            z-index: 1;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border: solid;
+            border-radius: 15px;
+            border-color: #242424;
+            top: 0;
+            left: 100%;
+        }
+
+        .dropdown1-content .nav-item:hover .sub-dropdown1-content {
+            display: block;
+            width: 150px;
+            border-style: solid;
+            border-color: rgb(56, 56, 56);
+        }
+
+        .nav-link:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(36, 36, 36, 0.6); /* Slightly transparent background */
+            color: #fff;
+            min-width: 200px;
+            height:auto;
+            z-index: 1;
+            list-style: none;
+            padding: 10px; /* Adjusted padding for top, bottom, left, and right */
+            margin: 0px; /* Adjusted margin with units */
+            border: 3px  rgba(36, 36, 36, 0.6); /* Adjusted border with units */
+            border-radius: 15px;
+            top: 100%;
+            left: 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .dropdown-content .nav-item {
+        position: relative;
+        }
+    
+        .dropdown-content a {
+            color: white;
+            padding: 3px 3px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #646464ad;
+            width:auto;
+            border-radius: 12px;
+            border-color: #646464ad;
+            color: #fff;
+            display:block;
+        }
+
+        .dropdown-content .sub-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(36, 36, 36);
+            color: #fff;
+            min-width: 200px;
+            z-index: 1;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-radius: 15px;
+            border-color:rgb(36, 36, 36);
+            top: 0;
+            left: 100%;
+        }
+
+        .sub-dropdown-content a{
+            display:block;
+        }
+
+        .dropdown-content .nav-item:hover .sub-dropdown-content {
+            display: block;
+            width: 300px;
+            border-style: solid;
+            border-color: rgb(56, 56, 56);
+        }
+
+        body.dark-mode .title a{
+            background-color:#F8EEE1;
+            color: #333333;
+        }
+        
+        body.dark-mode .title{
+            background-color:#F8EEE1;
+            color: #333333;
+        }
+
+        body.dark-mode .theme-switcher{
+            background-color: #333333;
+            color: #fff;
+        }
+        
+        body.dark-mode {
+            background-color: #FBB04C;
+            color: #333333;
+        }
+       
+        body.dark-mode .nav-link{
+            background-color:#F8EEE1;
+            color:#333333;
+        }
+
+        body.dark-mode .nav-link:hover {
+            color: #5f5f5f;}
+
+        body.dark-mode .header{
+            background-color: #F8EEE1;
+            color:#333333;
+        }
+
+        body.dark-mode .dropdown1-content{
+            background-color:rgba(100, 100, 100, 0.6);
+            border-color:#5f5f5f;
+            backdrop-filter: blur(10px);
+        }
+
+        body.dark-mode .dropdown1-content a{
+            color:#ffffff;
+        }
+
+        body.dark-mode .dropdown1-content a:hover{
+            color:#000;
+            border-color:#ffffff;
+            background-color:#fff;
+        }
+        body.dark-mode .dropdown1-content .sub-dropdown1-content{
+            background-color:#2c2c2c;
+            border-color:#5f5f5f;
+        }
+
+        body.dark-mode .dropdown-content{
+            background-color:rgba(100, 100, 100, 0.6);
+            backdrop-filter: blur(10px);
+            border:none;
+        }
+
+        body.dark-mode .dropdown-content a{
+            color:#ffffff;
+        }
+
+        body.dark-mode .dropdown-content a:hover{
+            color:#000;
+            border-color:#F8EEE1;
+            background-color:#F8EEE1;
+        }
+        body.dark-mode .dropdown-content .sub-dropdown-content{
+            background-color: #2c2c2c;
+            border-color:#5f5f5f;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .nav-item{
+            font-family: 'Poppins', sans-serif;
+            font-size: medium;
+            cursor: pointer;
+            display: block;
+            position: relative;
+            transition: transform 0.3s ease; 
+            z-index: 1000;
+        }
+
+        .nav-item i.material-icons{
+            background: linear-gradient(90deg, #fa5560, #b14bf4, #4d91ff);
+            -webkit-background-clip: text; /* Apply gradient to text */
+            color: transparent; /* Hide original text */
+            transition: background-position 0.3s ease-in-out; /* Smooth transition */
+            z-index: 1000; /* Place text above gradient */
+        }
+
+        body.dark-mode .material-icons {
+        color: #31302F; /* or any other color you prefer */
+        }
+
+        .nav-item:hover{
+            transform: translateY(5px); /* Move icon upwards on hover */
+        }
+        .nav-item i.material-icons:hover{
+            background-position: 100% 0; /* Move gradient on hover */
+        }
+
+        @font-face {
+        font-family: 'NewFont'; /* Give a name to your font */
+        src: url('newfont.otf'); /* Link to your font file */
+    }
+
+
+        .course-name-1{
+            text-align: center;
+            font-family:'Times New Roman', Times, serif;
+            font-size: 40px;
+        }
+
+        .dark-mode .course-name-1{
+            color:31302F;
+        }
+
+        .gradient-text {
+            font-family: 'NewFont', sans-serif; /* Use your custom font */
+            background: linear-gradient(90deg, #fa5560, #b14bf4, #4d91ff);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-left: 10px;
+        }
+
+        .dark-mode .gradient-text{
+            color:#31302F;
+        }
+
+        
+        .dark-mode .course-selector
+        {
+            background-color:rgba(114, 114, 114, 0.6);
+            backdrop-filter: blur(10px);
+        }
+
+        .dark-mode .course-selector div
+        {
+            color:#fff;
+        }
+
+        .course-selector {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        justify-content: center;
+        padding: 60px;
+        background-color: #ffffff25;
+        font-weight: 600;
+        width: 800px;
+        height: 700px;
+        border-radius: 30px;
+        overflow: scroll;
+        margin: 0 auto; 
+        overflow-x: hidden;
+    }
+
+        .course-selector div {
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0px;
+        color: #fff;
+        text-align: center ;
+        font-size: 1.2em;
+        padding: 10px;
+        aspect-ratio: 1;
+        font-family:'Poppins', sans-serif;
+        font-size: 50px;
+        width: 300px;
+        margin-left: 40px; /* Add this line */
+        margin-top: 20px;
+        margin-bottom:30px;
+        
+    }
+
+        .course-selector div:hover{
+            box-shadow: 0 0 100px rgba(98, 0, 255, 0.200);
+        }
+
+        .dark-mode .course-selector div:hover{
+            box-shadow: 0 0 100px rgba(98, 0, 255, 0.200);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="theme-switcher" id="theme-switcher">
+        &#9728; <!-- Sun icon for light mode -->
+    </div>
+    <div class="header">
+        <b class="title"><a href="Finalcorrection.html">&lt;/&gt; Engineering Nerds</a></b>
+        <div class="headercontent">
+            <ol class="nav">
+                <audio id="hoverSound" preload="auto">
+                    <source src="click-1.mp3">
+                </audio>
+                <li class="search-container">
+                    <input type="text" class="searchbar" placeholder=" Search...">
+                </li>
+                <li class="home-page">
+                        <a href="Finalcorrection.html" class="nav-link">
+                            <i class="material-symbols-outlined" title="Home">home</i>
+                        </a>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link">
+                        <i class="material-icons">school</i>Institute
+                        <ul class="dropdown-content">
+                            <li class="nav-item">
+                                <a href="#" title="Indus Institute of Technology & Engineering">IITE &gt;</a>
+                                <ul class="sub-dropdown-content">
+                                    <li><a href="Btech_CSE.html">B.tech Computer Science</a></li>
+                                    <li><a href="#">B.tech Computer</a></li>
+                                    <li><a href="#">B.tech Automobile</a></li>
+                                    <li><a href="#">B.tech Civil</a></li>
+                                    <li><a href="#">B.tech Electrical</a></li>
+                                    <li><a href="#">B.tech Electronic & Communication</a></li>
+                                    <li><a href="#">B.tech Information Technology</a></li>
+                                    <li><a href="#">B.tech Mechanical</a></li>
+                                    <li><a href="#">B.tech Metallurgical</a></li>
+                                    <li><a href="#">B.tech Information & Communication</a></li>
+                                    <li><a href="#">B.tech Cyber Security</a></li>
+                                    <li><a href="#">B.tech PG Diploma in Cyber Security</a></li>
+                                    <li><a href="#">B.tech Diploma in Cyber Security</a></li>
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" title="Indus Architecture School">IAS &gt;</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" title="Indus Design School">IDS &gt;</a>
+                                <ul class="sub-dropdown-content">
+                                    <li><a href="#">Interior Design</a></li>
+                                    <li><a href="#">Fashion Design</a></li>
+                                    <li><a href="#">Communication Design</a></li>
+                                    <li><a href="#">Product Design</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" title="Indus Institute of Information & Communication Technology">IIICT &gt;</a>
+                                <ul class="sub-dropdown-content">
+                                    <li><a href="#">(BCA + MCA)</a></li>
+                                    <li><a href="#">(B.Sc+M.Sc)(CA & IT)</a></li>
+                                    <li><a href="#">B.Sc - Data Science</a></li>
+                                    <li><a href="#">B.Sc - Computer Science(AI & ML)</a></li>
+                                    <li><a href="#">B.Sc - Cyber Security</a></li>    
+                                    <li><a href="#" title="Master of Computer Applications">MCA</a></li>
+                                    <li><a href="#">M.Sc Information Technology</a></li>
+                                    <li><a href="#">M.Sc Cyber Security</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" title="Indus Institute of Management Studies">IIMS &gt;</a>
+                                <ul class="sub-dropdown-content">
+                                    <li><a href="#">Integrated MBA</a></li>
+                                    <li><a href="#">BBA</a></li>
+                                    <li><a href="#">B.com(Honors with AACA UK)</a></li>
+                                    <li><a href="#">MBA</a></li>
+                                    <li><a href="#">BBA (Aviation)</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" title="Indus Instite of Science Humanitites & Liberal Studies">IISHLS &gt;</a>
+                                <ul class="sub-dropdown-content">
+                                    <li><a href="#">Under Graduate Program</a></li>
+                                    <li><a href="#">Post Graduate Program</a></li>
+                                    <li><a href="#">Ph.D Program</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" title="Indus Institute of Special Studies">IISS &gt;</a>
+                                <ul class="sub-dropdown-content">
+                                    <li><a href="#">Center of Indic Studies</a></li>
+                                    <li><a href="#">Indus yoga & wellness Center of Excellence</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" title="Indus Institute of Law">IIL &gt;</a>
+                                <ul class="sub-dropdown-content">
+                                    <li><a href="#">BBA LLB (Hons)</a></li>
+                                    <li><a href="#">BA LLB (Hons)</a></li>
+                                    <li><a href="#">LLB (Hons)</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" title="Indus Institute of Pharmacy & Research">IIPR &gt;</a>
+                                <ul class="sub-dropdown-content">
+                                    <li><a href="#">Bachelor in Pharmacy (B.Pharm)</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" title="Indus Institute of Aviation Technology">IIATE &gt;</a>
+                                <ul class="sub-dropdown-content">
+                                    <li><a href="#"title="Aircraft Maintenance Engineering">B.Tech AME</a></li>
+                                    <li><a href="#">B.Tech Aeronautical Engineering</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link">
+                        <i class="material-icons">confirmation_number</i> Entertainment
+                        <ul class="dropdown1-content">
+                            <li class="nav-item">
+                                <a href="#">Movies Update &gt;</a>
+                                <ul class="sub-dropdown1-content">
+                                    <li><a href="https://t.me/Full_hd_movie_bollywood_new_all">Bollywood</a></li>
+                                    <li><a href="#">Hollywood</a></li>
+                                </ul>   
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Network &gt;</a>
+                                <ul class="sub-dropdown1-content">
+                                    <li><a href="#">Wonderfull People</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Books &gt;</a>
+                                <ul class="sub-dropdown1-content">
+                                    <li><a href="#">Institutional</a></li>
+                                    <li><a href="#">Entrepreneurial</a></li>
+                                    <li><a href="#">Financial</a></li>
+                                    <li><a href="#">Sci-fi</a></li>
+                                    <li><a href="#">Non-Fiction</a></li>
+                                    <li><a href="#">Personal Development</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link">
+                        <i class="material-icons">article</i>About Us
+                        <ul class="dropdown1-content">
+                            <li><a href="#"title="our vision">Vision</a></li>
+                            <li><a href="#"title="our mission">Mission</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link">
+                        <i class="material-icons">group</i>Our Team
+                        <ul class="dropdown-content">
+                            <li><a href="#" title="maulik.darji2005@gmail.com" >Maulik </a></li>
+                            <li><a href="#"title="abhimanyurajwat08@gmail.com">Abhimanyu </a></li>
+                            <li><a href="#"title="jean3864@gmail.com">Rakesh </a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link">
+                        <i class="material-icons">hub</i>Contact
+                        <ul class="dropdown1-content">
+                            <li class="nav-item">
+                                <a href="#">Contact &gt;</a>
+                                <ul class="sub-dropdown1-content">
+                                    <li><a href="https://www.instagram.com/ok_maulik/" title="Maulik Instagram">Maulik</a></li>
+                                    <li><a href="https://www.instagram.com/abhimanyu_rajawat_08/" title="Abhimanyu Instagram">Abhimanyu</a></li>
+                                    <li><a href="https://www.instagram.com/rakesh___endl_04/" title="Rakesh Instagram">Rakesh</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Social Media &gt;</a>
+                                <ul class="sub-dropdown1-content">
+                                    <li><a href="https://www.instagram.com/indiaspire_in/"><i class="fab fa-instagram"></i> Instagram</a></li>
+                                    <li><a href="https://whatsapp.com/channel/0029VajSQdqGZNCyUAFvYv3U"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                                    <li><a href="https://web.telegram.org/k/#?tgaddr=tg%3A%2F%2Fresolve%3Fdomain%3Dindus_university_Books"><i class="fab fa-telegram"></i> Telegram</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link">
+                        <i class="material-icons">account_circle</i> My Account
+                        <ul class="dropdown1-content">
+                            <li><a href="signup1.htm" title="if not signed-up yet">Sign up</a></li>
+                            <li><a href="login.html" title="if not loged-in yet">Login</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="course-name-1">
+        <h3 id="course-name">B.Tech<br><span class="gradient-text">Computer Science Engineering</span></h3>
+    </div>
+        
+    <div class="course-selector">
+        <div style="background: #06080D">SEM 1</div>
+        <div style="background: #06080D">SEM 2</div>
+        <div style="background: #06080D">SEM 3</div>
+        <div style="background: #06080D">SEM 4</div>
+        <div style="background: #06080D">SEM 5</div>
+        <div style="background: #06080D">SEM 6</div>
+        <div style="background: #06080D">SEM 7</div>
+        <div style="background: #06080D">SEM 8</div>
+    </div>
+    
+
+<script>
+
+        $(document).ready(function() {
+    var hoverSound = $("#hoverSound")[0];
+
+    // Event delegation for .nav-link, .sub-dropdown-content, and .sub-dropdown1-content elements
+    $(".nav").on("mouseenter", ".nav-link, .sub-dropdown-content, .sub-dropdown1-content", function() {
+        hoverSound.currentTime = 0; // Rewind to the beginning (in case it's already playing)
+        hoverSound.play();
+    });
+});
+        const themeSwitcher = document.getElementById('theme-switcher');
+themeSwitcher.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    if (document.body.classList.contains('dark-mode')) {
+        themeSwitcher.innerHTML = '&#9788;'; // Moon icon for dark mode
+    } else {
+        themeSwitcher.innerHTML = '&#9728;'; // Sun icon for light mode
+    }
+});
+</script>
+
+
+</body>
+
+</html>
